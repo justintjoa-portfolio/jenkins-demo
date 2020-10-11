@@ -19,12 +19,6 @@ docker volume rm $(docker volume ls -q)
 
 ./gradlew build docker dockerRun
 
-docker container exec <Containerid> sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"
 
-docker container run -d -p 8082:8080 -v :/var/jenkins_home --name jenkins-local jenkins/jenkins:lts
-
-how to persist data: https://rangle.io/blog/running-jenkins-and-persisting-state-locally-using-docker-2/
-
-Initial run should make a volume, use docker volume ls to find the volume that was made
 
 Jenkins will then be available at [http://localhost:8080](http://localhost:8080).
