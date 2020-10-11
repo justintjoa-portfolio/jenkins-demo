@@ -15,4 +15,9 @@ branch ([YouTube video](https://youtu.be/sCcuUMn1vdM) | [article](https://tomgre
 
 ./gradlew build docker dockerRun
 
+docker container exec <Containerid> sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+
+
+how to persist data: https://rangle.io/blog/running-jenkins-and-persisting-state-locally-using-docker-2/
+
 Jenkins will then be available at [http://localhost:8080](http://localhost:8080).
