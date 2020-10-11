@@ -1,8 +1,14 @@
-pipelineJob('pipelineJob') {
+pipelineJob('spotter-job') {
     definition {
-        cps {
-            script(readFileFromWorkspace('pipelineJob.groovy'))
-            sandbox()
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'git@github.com:justintjoa-portfolio/ARTracker.git'
+                    }
+                    branch 'master'
+                }
+            }
         }
     }
 }
